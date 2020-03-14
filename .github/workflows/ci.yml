@@ -28,6 +28,8 @@ jobs:
         ./gradlew test
         
     - name: Build with Gradle
-      run: ./gradlew build
+      run: |
+          cd server
+          ./gradlew build
       
       
