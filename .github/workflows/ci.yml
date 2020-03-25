@@ -30,5 +30,20 @@ jobs:
       run: |
           cd server
           ./gradlew build
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        os: [ubuntu-lastest, windows-2016]
+    steps:
+    - name: Check out
+      uses: actions/checkout@v2
+    - name: Gradle run test
+      run: |
+        cd server
+          ./gradlew test
+      env:
+        CI: true
       
       
