@@ -39,6 +39,10 @@ jobs:
     steps:
     - name: Check out
       uses: actions/checkout@v2
+    - name: Grant execute permission for gradlew
+      run: |
+          cd server
+          chmod 755 ./gradlew
     - name: Gradle run test
       run: |
         cd server
