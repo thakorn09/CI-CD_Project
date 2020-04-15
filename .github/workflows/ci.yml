@@ -48,6 +48,16 @@ jobs:
         cd server
           ./gradlew test
       env:
-        CI: true
+        CI: true       
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: thakorn09/aws-ecr-deploy@v1
+        with:
+          access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          account_id: ${{ secrets.AWS_ACCOUNT_ID }}
+          region: ap-southeast-1
       
       
