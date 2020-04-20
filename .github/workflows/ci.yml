@@ -34,12 +34,13 @@ jobs:
      runs-on: ubuntu-latest
      steps:
        - uses: actions/checkout@v1
-       - name : Build Docker image
-         env:
-           IMAGE_TAG: ${{ github.sha }}
+       - name : Gradle run test
          run: |
             cd server
             cd chmod 755 ./Dockerfile
+       - name: Build Docker image
+         env:
+           IMAGE_TAG: ${{ github.sha }}
             docker build -t "$GITHUB_REPOSITORY:$IMAGE_TAG" .
                
       
