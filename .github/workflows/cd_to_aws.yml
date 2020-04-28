@@ -94,6 +94,8 @@ jobs:
         username: ubuntu
         port: 22
         key_path: .aws/cicdEc2.pem
-        script: whoami 
+        script: |
+            whoami
+            docker images 
       
     
