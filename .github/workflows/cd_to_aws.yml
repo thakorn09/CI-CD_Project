@@ -88,7 +88,7 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ubuntu
         port: 22
-        key: .aws/cicdEc2.pem
+        key_path: ${{ secrets.Ec2_Keypair }}
         script: whoami 
       
     
