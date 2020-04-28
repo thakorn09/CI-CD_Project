@@ -81,10 +81,16 @@ jobs:
         service: cicdproject
         cluster: cicdproject
         wait-for-service-stability: true
+      
+    - name: allow permission pem file
+      run: |
+        cd .aws
+        chmod 400 cicdEc2.pem  
   
     - name: connect ssh
       uses: appleboy/ssh-action@master
       with:
+        env: .aws/cicdEc2.pem
         host: ${{ secrets.HOST }}
         username: ubuntu
         port: 22
