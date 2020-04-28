@@ -83,13 +83,12 @@ jobs:
         wait-for-service-stability: true
   
     - name: connect ssh
-      uses: fifsky/ssh-action@master
-      with: 
-        command: |
-         docker images
+      uses: appleboy/ssh-action@master
+      with:
         host: ${{ secrets.HOST }}
-        user: root
+        username: ubuntu
+        port: 22
         key: .aws/cicdEc2.pem
-               
+        script: whoami 
       
     
