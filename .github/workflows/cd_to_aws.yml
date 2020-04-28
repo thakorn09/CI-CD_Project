@@ -87,7 +87,7 @@ jobs:
       with: 
         command: |
          docker images
-        host: ${{54.179.190.188}}
+        host: ${{ secrets.HOST }}
         user: root
         key: .aws/cicdEc2.pem
                
