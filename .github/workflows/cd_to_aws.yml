@@ -88,7 +88,7 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ubuntu
         port: 22
-        key_path: ${{ secrets.Ec2_Keypair }}
+        passphrase: ${{ secrets.Ec2_Keypair }}
         script: whoami 
       
     
