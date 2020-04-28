@@ -90,11 +90,10 @@ jobs:
     - name: connect ssh
       uses: appleboy/ssh-action@master
       with:
-        env: .aws/cicdEc2.pem
         host: ${{ secrets.HOST }}
         username: ubuntu
         port: 22
-        key_path: ${{ secrets.Ec2_Keypair }}
+        key_path: .aws/cicdEc2.pem
         script: whoami 
       
     
