@@ -81,21 +81,15 @@ jobs:
         service: cicdproject
         cluster: cicdproject
         wait-for-service-stability: true
-  deploytoEc2:
-     needs: deploy
-     runs-on: ubuntu-latest
-     steps:
-       - uses: actions/checkout@v1
-       - name : Remote to Ec2 instance
-         run: |
-          cd .aws
-          chmod 400 cicdEc2.pem
-          ssh -i "cicdEc2.pem" ubuntu@54.179.190.188
-          docker ps    
-       - name: Exit
-         run: |
-           exit
-         
+  
+    - name: connect ssh
+      uses: fifsky/ssh-action@master
+      with: 
+        command: |
+         docker images
+        host: ${{54.179.190.188}}
+        user: root
+        key: .aws/cicdEc2.pem
                
       
     
