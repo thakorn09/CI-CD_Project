@@ -89,6 +89,8 @@ jobs:
   
     - name: connect ssh
       uses: appleboy/ssh-action@master
+      env: 
+        SHA: ${{ github.sha }}
       with:
         host: ${{ secrets.HOST }}
         username: ubuntu
@@ -97,5 +99,6 @@ jobs:
         script: |
             whoami
             docker images 
+            echo "sha: $SHA"
       
     
