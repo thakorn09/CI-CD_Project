@@ -101,6 +101,7 @@ jobs:
             whoami
             docker images 
             echo "sha: $SHA" 
+            sudo $(aws ecr get-login --no-include-email --region ap-southeast-1)
             docker rm -f $(docker ps -a -q)
             docker pull 862605034458.dkr.ecr.ap-southeast-1.amazonaws.com/cicdproject:$SHA
             docker images
