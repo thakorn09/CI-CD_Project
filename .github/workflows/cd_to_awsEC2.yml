@@ -62,9 +62,7 @@ jobs:
         # be deployed to ECS.
         cd server
         chmod 755 ./Dockerfile
-	chmod 755 ./dockercompose.yml
         docker-compose -f docker-compose.yml build
-	docker-compose -f docker-compose.yml push
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
     - name: allow permission pem file
