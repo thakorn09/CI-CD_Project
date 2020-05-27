@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+ backend:
+    build: ./backend
+    image: $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+    ports:
+      - 9000:9000
+
