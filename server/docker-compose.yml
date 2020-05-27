@@ -1,7 +1,8 @@
 version: '3'
 
 services:
- backend:
+
+  backend:
     build: ./backend
     image: $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
     ports:
