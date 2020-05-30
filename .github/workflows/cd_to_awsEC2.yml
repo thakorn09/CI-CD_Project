@@ -62,6 +62,7 @@ jobs:
         # be deployed to ECS.
         cd server
         chmod 755 ./Dockerfile
+        chmod 755 ./docker-compose.yml
         docker-compose -f docker-compose.yml build
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
