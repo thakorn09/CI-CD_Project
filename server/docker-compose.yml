@@ -4,7 +4,7 @@ services:
 
   backend:
     build: ./backend
-    image: ${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG}
+    image: 862605034458.dkr.ecr.ap-southeast-1.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
     ports:
       - 9000:9000
 
