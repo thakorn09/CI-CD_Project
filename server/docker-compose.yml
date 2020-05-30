@@ -1,10 +1,8 @@
 version: '3'
 
 services:
-
   backend:
-    build: ./backend
-    image: 862605034458.dkr.ecr.ap-southeast-1.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
-    ports:
-      - 9000:9000
-
+      build: .
+      image: 862605034458.dkr.ecr.ap-southeast-1.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
+      ports:
+        - 9000:9000
