@@ -87,11 +87,11 @@ jobs:
             docker images 
             echo "sha: $SHA" 
             $sudo $(aws ecr get-login --no-include-email --region ap-southeast-1)
-            docker-compose stop
+            docker-compose -f docker-compose.yml stop
             docker-compose rm -f
-            docker-compose pull
+            docker-compose -f docker-compose.yml pull
             docker images
-            docker-compose up -d
+            docker-compose -f docker-compose.yml up -d
             docker ps
             
     
