@@ -76,12 +76,13 @@ jobs:
       uses: appleboy/ssh-action@master
       env: 
         SHA: ${{ github.sha }}
+        ECR_REPOSITORY: cicdproject
       with:
         host: ${{ secrets.HOST }}
         username: ubuntu
         port: 22
         key_path: .aws/cicdEc2.pem
-        envs: SHA
+        envs: SHA,ECR_REPOSITORY
         script: |
             whoami
             docker images 
