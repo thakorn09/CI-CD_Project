@@ -46,6 +46,7 @@ jobs:
       run: |
         cd server
           ./gradlew test
+        cd ..
       env:
         CI: true
       
