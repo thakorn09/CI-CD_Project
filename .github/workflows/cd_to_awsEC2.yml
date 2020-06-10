@@ -24,6 +24,7 @@ jobs:
         cd ..
       env:
         CI: true
+        
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -55,7 +56,7 @@ jobs:
     - name: allow permission pem file
       run: |
         cd .aws
-        chmod 400 cicdEc2.pem  
+        chmod 400 CiCdkey.pem  
   
     - name: deploy to ec2
       uses: appleboy/ssh-action@master
